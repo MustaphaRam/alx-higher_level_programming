@@ -1,7 +1,8 @@
 #include "lists.h"
 #include <stddef.h>
 
-int is_palindrome(listint_t **head)
+listint_t *reverse_listint(listint_t **head);
+int is_palindrome(listint_t **head);
 /**
  * is_palindrome - checks if a singly linked list is a palindrome
  * @head: pointer to pointer to the head of the list
@@ -9,43 +10,61 @@ int is_palindrome(listint_t **head)
  */
 int is_palindrome(listint_t **head)
 {
-    listint_t *slow = *head;
-    listint_t *fast = *head;
-    listint_t *prev = NULL;
-    listint_t *temp = NULL;
+	listint_t *tmp, *rev, *mid;
+	size_t size = 0, i;
 
-    if (*head == NULL || (*head)->next == NULL)
-        return (1);
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
 
-    while (fast != NULL && fast->next != NULL)
-    {
-        fast = fast->next->next;
-        prev = slow;
-        slow = slow->next;
-    }
+	tmp = *head;
+	while (tmp)
+	{
+		size++;
+		tmp = tmp->next;
+	}
 
-    if (fast != NULL)
-        slow = slow->next;
+	tmp = *head;
+	for (i = 0; i < (size / 2) - 1; i++)
+		tmp = tmp->next;
 
-    prev->next = NULL;
+	if ((size % 2) == 0 && tmp->n != tmp->next->n)
+		return (0);
 
-    while (slow != NULL)
-    {
-        temp = slow->next;
-        slow->next = prev;
-        prev = slow;
-        slow = temp;
-    }
+	tmp = tmp->next->next;
+	rev = reverse_listint(&tmp);
+	mid = rev;
 
-    fast = *head;
-    slow = prev;
+	tmp = *head;
+	while (rev)
+	{
+		if (tmp->n != rev->n)
+			return (0);
+		tmp = tmp->next;
+		rev = rev->next;
+	}
+	reverse_listint(&mid);
 
-    while (slow != NULL)
-    {
-        if (fast->n != slow->n)
-            return (0);
-        fast = fast->next;
-        slow = slow->next;
-    }
-    return (1);
+	return (1);
+}
+
+/**
+ * reverse_listint - Reverses a singly-linked listint_t list.
+ * @head: A pointer to the starting node of the list to reverse.
+ *
+ * Return: A pointer to the head of the reversed list.
+ */
+listint_t *reverse_listint(listint_t **head)
+{
+	listint_t *node = *head, *next, *prev = NULL;
+
+	while (node)
+	{
+		next = node->next;
+		node->next = prev;
+		prev = node;
+		node = next;
+	}
+
+	*head = prev;
+	return (*head);
 }
