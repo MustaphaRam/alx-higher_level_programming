@@ -45,6 +45,5 @@ int is_palindrome(listint_t **head)
         fast = fast->next;
         slow = slow->next;
     }
-
     return (1);
 }
