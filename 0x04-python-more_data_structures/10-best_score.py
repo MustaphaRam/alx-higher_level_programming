@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-    if not isinstance(a_dictionary, dict):
+    if a_dictionary is None or not a_dictionary:
         return None
-    return max(a_dictionary.keys())
+    max_score = max(a_dictionary.values())
+    for key, value in a_dictionary.items():
+        if value == max_score:
+            return key
