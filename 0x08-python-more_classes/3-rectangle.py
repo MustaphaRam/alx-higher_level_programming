@@ -58,7 +58,13 @@ class Rectangle:
             return ""
         str = ""
         for i in range( self.__height):
+            str += "\n"
             for j in range(self.width):
                 str += "#"
-            str += "\n"
         return str
+
+    def __repr__(self):
+        return f'<%s.%s object at %s>' % (
+            self.__class__.__module__,
+            self.__class__.__name__,
+            hex(id(self)))
