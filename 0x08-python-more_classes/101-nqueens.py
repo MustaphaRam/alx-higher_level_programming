@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Solves the N-queens puzzle."""
+
 import sys
 
 def is_safe(board, row, col, N):
@@ -30,6 +32,7 @@ def is_safe(board, row, col, N):
     return True
 
 def solve_nqueens(N):
+    """Return the list of lists representation of a solved chessboard."""
     board = [[0 for _ in range(N)] for _ in range(N)]
     solutions = []
 
@@ -52,6 +55,8 @@ def solve_nqueens(N):
     return solutions
 
 def print_solutions(solutions):
+    """Return the list of lists representation 
+        of a solved chessboard."""
     for solution in solutions:
         print(solution)
 
