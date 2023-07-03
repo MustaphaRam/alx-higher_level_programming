@@ -56,15 +56,4 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        str = ""
-        for i in range( self.__height):
-            str += "\n"
-            for j in range(self.width):
-                str += "#"
-        return str
-
-    def __repr__(self):
-        return f'<%s.%s object at %s>' % (
-            self.__class__.__module__,
-            self.__class__.__name__,
-            hex(id(self)))
+        return '\n'.join(["#" * self.__width] * self.__height)
