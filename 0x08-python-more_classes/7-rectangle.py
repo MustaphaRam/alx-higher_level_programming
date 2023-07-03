@@ -72,10 +72,6 @@ class Rectangle:
         """Return the string representation of the Rectangle."""
         return f'Rectangle({self.__width}, {self.__height})'
 
-    def __hex__(self):
-        """Return the id of the object"""
-        return hex(id(self))
-
     def __del__(self):
         """Print a message for every deletion of a Rectangle."""
         type(self).number_of_instances -= 1
