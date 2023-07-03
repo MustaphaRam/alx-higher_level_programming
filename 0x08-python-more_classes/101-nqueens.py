@@ -4,7 +4,15 @@
 import sys
 
 def is_safe(board, row, col, N):
-    """Check if there is a queen in the same column"""
+    """Check if there is a queen in the same columne.
+    Args:
+        board (list): The current working chessboard.
+        row (int): The current working row.
+        queens (int): The current number of placed queens.
+        solutions (list): A list of lists of solutions.
+    Returns:
+        solutions
+    """
     for i in range(row):
         if board[i][col] == 1:
             return False
@@ -32,7 +40,8 @@ def is_safe(board, row, col, N):
     return True
 
 def solve_nqueens(N):
-    """Return the list of lists representation of a solved chessboard."""
+    """Return the list of lists representation of a solved chessboard.
+        N (int) : number chessboard"""
     board = [[0 for _ in range(N)] for _ in range(N)]
     solutions = []
 
