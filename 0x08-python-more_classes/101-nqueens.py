@@ -7,7 +7,8 @@ def is_safe(board, row, col, N):
         if board[i][col] == 1:
             return False
 
-    """Check if there is a queen in the upper left diagonal"""
+    """Check if there is a queen in the upper 
+        left diagonal"""
     i = row - 1
     j = col - 1
     while i >= 0 and j >= 0:
@@ -16,7 +17,8 @@ def is_safe(board, row, col, N):
         i -= 1
         j -= 1
 
-    """Check if there is a queen in the upper right diagonal"""
+    """Check if there is a queen in the upper 
+        right diagonal"""
     i = row - 1
     j = col + 1
     while i >= 0 and j < N:
