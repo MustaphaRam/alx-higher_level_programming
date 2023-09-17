@@ -2,7 +2,8 @@
 """prints all City objects
 from the database hbtn_0e_14_usa"""
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
 
     import sys
     from model_state import Base, State

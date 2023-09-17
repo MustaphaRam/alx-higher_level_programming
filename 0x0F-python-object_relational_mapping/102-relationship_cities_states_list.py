@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """lists all City objects from the database hbtn_0e_101_usa"""
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
     import sys
     from relationship_state import Base, State

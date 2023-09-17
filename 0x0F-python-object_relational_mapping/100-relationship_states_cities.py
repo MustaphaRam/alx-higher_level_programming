@@ -3,7 +3,7 @@
 with the City “San Francisco”
 to the database hbtn_0e_100_usa"""
 
-if __name__ == "__main__":
+if __name__ == '__main__':
 
     import sys
     from relationship_state import Base, State
