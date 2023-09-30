@@ -3,6 +3,7 @@
     passed URL with the email as a parameter, and displays the body of the
     response
 """
+
 import requests
 from sys import argv
 
