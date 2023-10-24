@@ -8,21 +8,21 @@ request(url, function (err, response, body) {
     console.log(err);
   else {
     if (response.statusCode === 200){
-    const content = JSON.parse(body);
-    const characters = content.characters;
+      const content = JSON.parse(body);
+      const characters = content.characters;
     // console.log(characters);
-    for (const character of characters) {
+      for (const character of characters) {
         request.get(character, (error, response, body) => {
-        if (error) {
+          if (error) {
             console.log(error);
-        } else {
+          } else {
             const names = JSON.parse(body);
             console.log(names.name);
-        }
+          }
         });
-    }
+      }
     }
     else
-        console.log('code err '+ response.statusCode);
+      console.log('code err '+ response.statusCode);
   }
 });
