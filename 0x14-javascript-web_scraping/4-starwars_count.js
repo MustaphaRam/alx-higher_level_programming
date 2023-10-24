@@ -3,6 +3,7 @@
 const request = require('request');
 const url = process.argv[2];
 let num = 0;
+
 request(url, function (err, response, body) {
   if (err) {
     console.log(err);
