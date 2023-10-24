@@ -11,7 +11,7 @@ request.get(url, (err, response, body) => {
       const content = JSON.parse(body);
       console.log(content.title);
     } else {
-        console.log('code err '+ response.statusCode);
+      console.log('code err ' + response.statusCode);
     }
   }
 });
