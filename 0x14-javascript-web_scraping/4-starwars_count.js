@@ -12,12 +12,12 @@ request(url, function (err, response, body) {
     content.results.forEach((film) => {
       film.characters.forEach((character) => {
         if (character.includes(18)) {
-            num += 1;
+          num += 1;
         }
       });
     });
     console.log(num);
   } else {
-    console.log('code err '+ response.statusCode);
+    console.log('code err ' + response.statusCode);
   }
 });
