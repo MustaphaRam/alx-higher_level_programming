@@ -23,6 +23,6 @@ request(url, function (err, response, body) {
             }
         }
         else
-            console.log('code err '+ response.statusCode);
+            console.log('code err ' + response.statusCode);
     }
 });
