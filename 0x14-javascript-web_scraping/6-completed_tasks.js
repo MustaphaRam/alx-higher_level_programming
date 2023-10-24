@@ -21,9 +21,8 @@ request(url, function (err, response, body) {
         }
       }
       console.log(completed);
-    }
-    else {
-        console.log('code err ' + response.statusCode);
+    } else {
+      console.log('code err ' + response.statusCode);
     }
   }
 });

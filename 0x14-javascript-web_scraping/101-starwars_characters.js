@@ -7,10 +7,10 @@ request(url, function (err, response, body) {
   if (err) {
     console.log(err);
   } else {
-    if (response.statusCode === 200) {
+    if (response.statusCode === 200){
       const content = JSON.parse(body);
       const characters = content.characters;
-    // console.log(characters);
+      // console.log(characters);
       for (const character of characters) {
         request.get(character, (error, response, body) => {
           if (error) {
@@ -22,7 +22,7 @@ request(url, function (err, response, body) {
         });
       }
     } else {
-      console.log('code err ' + response.statusCode);
+    console.log('code err ' + response.statusCode);
     }
   }
 });
