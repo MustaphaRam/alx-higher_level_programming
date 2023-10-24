@@ -4,10 +4,10 @@ const request = require('request');
 const url = 'https://swapi-api.alx-tools.com/api/films/'+process.argv[2];
 
 request(url, function (err, response, body) {
-  if (err)
+  if (err) {
     console.log(err);
-  else {
-    if (response.statusCode === 200){
+  } else {
+    if (response.statusCode === 200) {
       const content = JSON.parse(body);
       const characters = content.characters;
     // console.log(characters);
@@ -21,8 +21,8 @@ request(url, function (err, response, body) {
           }
         });
       }
-    }
-    else
+    } else {
       console.log('code err '+ response.statusCode);
+    }
   }
 });
