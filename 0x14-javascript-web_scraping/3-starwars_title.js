@@ -7,10 +7,11 @@ request(url, function (err, response, body) {
   if (err) {
     console.log(err);
   } else {
-      if (response.statusCode === 200) {
-        const content = JSON.parse(body);
-        console.log(content.title);
-      } else
+    if (response.statusCode === 200) {
+      const content = JSON.parse(body);
+      console.log(content.title);
+    } else {
         console.log('code err '+ response.statusCode);
+    }
   }
 });
